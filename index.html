@@ -184,6 +184,18 @@ button{font-family:"Inter",sans-serif}
   .ben-quote{font-size:16px}
 }
 
+/* ─── ATHLETE STORIES ─── */
+.story-wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:24px;margin-top:8px}
+.story-sum{background:var(--green-l);border:1px solid var(--green-m);border-radius:var(--r-lg);padding:32px;display:flex;gap:22px;align-items:center}
+.story-num{font-family:"Barlow Condensed",sans-serif;font-size:110px;font-weight:900;line-height:.85;color:var(--green)}
+.story-hl{font-family:"Barlow Condensed",sans-serif;font-size:30px;font-weight:800;text-transform:uppercase;line-height:1.05;color:var(--turf)}
+.story-hl em{font-style:normal;color:var(--amber)}
+.story-body{font-size:15px;color:var(--g2);line-height:1.65;margin-top:10px}
+.story-quote{background:var(--turf);border-radius:var(--r-lg);padding:32px 34px;margin:0;position:relative;border-left:5px solid var(--amber)}
+.sq-mark{font-family:Georgia,serif;font-size:80px;line-height:.6;color:var(--amber);height:34px}
+.story-quote blockquote{font-size:19px;line-height:1.6;color:#fff;font-weight:500;margin:0}
+.story-quote figcaption{font-size:13px;color:rgba(255,255,255,.6);margin-top:16px;font-weight:600;letter-spacing:.3px}
+@media(max-width:800px){.story-wrap{grid-template-columns:1fr}.story-sum{padding:24px;gap:10px;flex-direction:column;align-items:flex-start}.story-num{font-size:84px}.story-hl{font-size:24px}.story-quote{padding:26px 22px}.story-quote blockquote{font-size:17px}}
 /* ─── SPONSOR A PLAYER CAMPAIGN ──────────── */
 .campaign-sec{background:var(--green-l);padding:72px 40px;border-bottom:3px solid var(--green-m)}
 .campaign-in{max-width:1100px;margin:0 auto}
@@ -1192,8 +1204,21 @@ button{font-family:"Inter",sans-serif}
       </div>
     </div>
     <h2 class="h2">Athlete <em>Stories</em></h2>
-    <p class="sub">First names only. Real stories, real barriers, real outcomes.</p>
-    <div class="imp-ph"><strong>Athlete stories coming at launch.</strong> Once GFF begins awarding assistance, stories appear here &mdash; first name, club, city, and the specific barrier your gift removed. With family consent only.</div>
+    <p class="sub">Real stories, real barriers, real outcomes.</p>
+    <div class="story-wrap">
+      <div class="story-sum">
+        <div class="story-num">9</div>
+        <div>
+          <div class="story-hl">girls can play today &mdash; <em>thanks to you.</em></div>
+          <p class="story-body">Your donations put 9 girls from 7 schools on the field this season. Each one had the talent and the drive &mdash; what stood in her way was the cost of fees, gear, and travel. You removed it.</p>
+        </div>
+      </div>
+      <figure class="story-quote">
+        <div class="sq-mark">&ldquo;</div>
+        <blockquote>The registration fee alone would create a financial hardship for our family. Without help from the Girls Flag Football Foundation, she wouldn&rsquo;t be on the field this season.</blockquote>
+        <figcaption>&mdash; Parent of a GFFF-supported athlete</figcaption>
+      </figure>
+    </div>
     <div style="margin-top:48px;padding:32px;background:#fff;border-radius:var(--r);border:1px solid var(--g5)">
       <div style="font-size:17px;font-weight:700;color:var(--turf);margin-bottom:6px">Annual Impact Report</div>
       <p style="font-size:14px;color:var(--g2);margin-bottom:20px;line-height:1.65">Our first annual impact report will be published in December 2026. It will include athlete outcomes, financial summary, program metrics, and Year 2 plans.</p>
