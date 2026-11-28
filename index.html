@@ -403,8 +403,19 @@ button{font-family:"Inter",sans-serif}
 
 /* ─── PARTNERS PAGE ──────────────────────── */
 .partners-hero{background:var(--turf);padding:72px 40px}
-.pt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
-.pt-card{background:#fff;border-radius:var(--r);padding:28px;border:1px solid var(--g5);border-top:4px solid var(--green)}
+.pt-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.pt-nav{display:flex;gap:10px;align-items:center;margin-bottom:6px}
+.pt-btn{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--g5);background:#fff;color:var(--turf);font-size:20px;cursor:pointer;transition:background .12s,border-color .12s,color .12s}
+.pt-btn:hover{background:var(--green);border-color:var(--green);color:#fff}
+.pt-btn:disabled{opacity:.3;cursor:default;background:#fff;border-color:var(--g5);color:var(--turf)}
+.pt-count{font-size:13px;font-weight:700;color:var(--g3);min-width:44px;text-align:center}
+.pt-grid{display:flex;gap:0;margin-top:28px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-x:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch;transition:height .3s ease}
+.pt-grid::-webkit-scrollbar{display:none}
+.pt-card{flex:0 0 100%;min-width:0;scroll-snap-align:start;scroll-snap-stop:always;background:#fff;border-radius:var(--r);padding:36px 40px;border:1px solid var(--g5);border-top:4px solid var(--green);display:grid;grid-template-columns:1fr 1fr;column-gap:40px;align-content:start}
+.pt-card>.pt-ic,.pt-card>.pt-name,.pt-card>.pt-desc{grid-column:1}
+.pt-card>.pt-benefits{grid-column:2;grid-row:1/span 4;align-self:center}
+.pt-card>.pt-cta{grid-column:1;justify-self:start}
+.pt-card .pt-name{font-size:22px}.pt-card .pt-desc{font-size:15px}.pt-card .pt-ben{font-size:14px}.pt-card .pt-benefits{gap:10px}
 .pt-card:nth-child(2){border-top-color:var(--blue)}
 .pt-card:nth-child(3){border-top-color:var(--amber)}
 .pt-card:nth-child(4){border-top-color:#0E7490}
@@ -708,7 +719,8 @@ button{font-family:"Inter",sans-serif}
   .pd-card{grid-template-columns:1fr;gap:12px}
   .why-grid,.sp-motivation{grid-template-columns:1fr}
   .scta{grid-template-columns:1fr}.scta-btns{align-items:flex-start;flex-direction:row;flex-wrap:wrap}
-  .pt-grid{grid-template-columns:1fr 1fr}
+  .pt-card{grid-template-columns:1fr;padding:26px 20px}.pt-card>.pt-benefits{grid-column:1;grid-row:auto;margin-top:4px}
+  .pt-grid{align-items:flex-start}
   .impact-dash{grid-template-columns:1fr 1fr}.ratio-sec{grid-template-columns:1fr}.stories-grid{grid-template-columns:1fr}
   .donate-in{grid-template-columns:1fr}.donate-card{position:static}
   .fpl-grid{grid-template-columns:1fr 1fr}
@@ -910,8 +922,8 @@ button{font-family:"Inter",sans-serif}
       <div class="how-card ath">
         <div class="how-tag">For Athletes &amp; Families</div>
         <div class="step"><div class="step-n">1</div><div style="flex:1;padding-top:2px"><div class="step-m">Check your eligibility</div><div class="step-d">Ages 8&ndash;18 &middot; NorCal resident &middot; Enrolled in flag football &middot; Income within guidelines</div></div></div>
-        <div class="step"><div class="step-n">2</div><div style="flex:1;padding-top:2px"><div class="step-m">Submit a short application</div><div class="step-d">10 minutes. Tell us about you, your club, and what you need. Basic income documentation required.</div></div></div>
-        <div class="step"><div class="step-n">3</div><div style="flex:1;padding-top:2px"><div class="step-m">Get your award &mdash; and play</div><div class="step-d">Funds paid directly to your club or gear vendor. Reviewed within 14 business days.</div></div></div>
+        <div class="step"><div class="step-n">2</div><div style="flex:1;padding-top:2px"><div class="step-m">Submit a short application</div><div class="step-d">10 minutes. Tell us about you, your club, and what you need.</div></div></div>
+        <div class="step"><div class="step-n">3</div><div style="flex:1;padding-top:2px"><div class="step-m">Get your award &mdash; and play</div><div class="step-d">Approved funds reimbursed within 14 days of receipt of documentation.</div></div></div>
         <div style="margin-top:20px"><button class="btn btn-g btn-sm" onclick="showPage('apply')">See If You Qualify &rarr;</button></div>
       </div>
       <div class="how-card don">
@@ -1035,7 +1047,7 @@ button{font-family:"Inter",sans-serif}
     <div class="tiers-grid">
       <div class="tier-card tc-bronze"><div class="tier-nm">Bronze</div><div class="tier-amt">$1,000</div><ul class="tier-perks"><li class="tier-perk">Website logo</li><li class="tier-perk">Thank-you social post</li><li class="tier-perk">Newsletter mention</li></ul></div>
       <div class="tier-card tc-silver"><div class="tier-nm">Silver</div><div class="tier-amt">$5,000</div><ul class="tier-perks"><li class="tier-perk">All Bronze +</li><li class="tier-perk">Impact report feature</li><li class="tier-perk">Event banner</li></ul></div>
-      <div class="tier-card tc-gold"><div class="tier-nm">Gold</div><div class="tier-amt">$10,000</div><ul class="tier-perks"><li class="tier-perk">All Silver +</li><li class="tier-perk">Jersey logo patch</li><li class="tier-perk">Custom athlete story</li></ul></div>
+      <div class="tier-card tc-gold"><div class="tier-nm">Gold</div><div class="tier-amt">$10,000</div><ul class="tier-perks"><li class="tier-perk">All Silver +</li><li class="tier-perk">Custom impact report</li></ul></div>
       <div class="tier-card tc-pres"><div class="tier-nm">Presenting</div><div class="tier-amt">$25,000</div><ul class="tier-perks"><li class="tier-perk">All Gold +</li><li class="tier-perk">Full co-branding</li><li class="tier-perk">Named program rights</li></ul></div>
     </div>
   </div>
@@ -1168,8 +1180,8 @@ button{font-family:"Inter",sans-serif}
     <span class="lbl">Our Programs</span>
     <h1 class="h1">What your gift funds &mdash;<br>and <em>exactly</em> how much.</h1>
     <p class="sub">100% of your donation goes to the Athletes.</p>
-    <div class="pd-card"><div class="pd-ic">&#128095;</div><div><div class="pd-tag">Program 1</div><div class="pd-name">Gear Assistance</div><p class="pd-desc">You provide everything an athlete needs to suit up from day one &mdash; head to toe. We purchase gear directly or reimburse the club, using bulk-pricing partnerships with equipment suppliers.</p><div class="pd-items"><span class="pc">Cleats</span><span class="pc">Flags</span><span class="pc">Gloves</span><span class="pc">Mouthguard</span><span class="pc">Headguard</span></div><a class="pt-cta" href="https://givebutter.com/give-a-headguard-copy-faumhr" target="_blank" rel="noopener">Donate to Gear Assistance &rarr;</a></div></div>
-    <div class="pd-card"><div class="pd-ic">&#128203;</div><div><div class="pd-tag">Program 2</div><div class="pd-name">Club Fee Scholarships</div><p class="pd-desc">Your gift covers partial or full club registration fees, tiered by household income. No athlete is turned away for partial eligibility &mdash; even a 25% scholarship changes the math for a family.</p><div class="pd-items"><span class="pc">25% of fees</span><span class="pc">50% of fees</span><span class="pc">75% of fees</span><span class="pc">100% of fees</span></div><a class="pt-cta" href="https://givebutter.com/founding-donor-copy-7ccamz" target="_blank" rel="noopener">Donate to Club Fee Scholarships &rarr;</a></div></div>
+    <div class="pd-card"><div class="pd-ic">&#128095;</div><div><div class="pd-tag">Program 1</div><div class="pd-name">Gear Assistance</div><p class="pd-desc">You provide everything an athlete needs to suit up from day one &mdash; head to toe.</p><div class="pd-items"><span class="pc">Cleats</span><span class="pc">Flags</span><span class="pc">Gloves</span><span class="pc">Mouthguard</span><span class="pc">Headguard</span></div><a class="pt-cta" href="https://givebutter.com/give-a-headguard-copy-faumhr" target="_blank" rel="noopener">Donate to Gear Assistance &rarr;</a></div></div>
+    <div class="pd-card"><div class="pd-ic">&#128203;</div><div><div class="pd-tag">Program 2</div><div class="pd-name">Club Fee Scholarships</div><p class="pd-desc">Your gift covers partial or full club registration fees &mdash; even a 25% scholarship changes the math for a family.</p><div class="pd-items"><span class="pc">25% of fees</span><span class="pc">50% of fees</span><span class="pc">75% of fees</span><span class="pc">100% of fees</span></div><a class="pt-cta" href="https://givebutter.com/founding-donor-copy-7ccamz" target="_blank" rel="noopener">Donate to Club Fee Scholarships &rarr;</a></div></div>
     <div class="pd-card"><div class="pd-ic">&#128653;</div><div><div class="pd-tag">Program 3</div><div class="pd-name">Travel &amp; Tournament Assistance</div><p class="pd-desc">Away tournaments are where athletes develop, get seen, and compete at the highest level. You make sure no girl misses a tournament because of her zip code.</p><div class="pd-items"><span class="pc">Hotel</span><span class="pc">Transportation</span><span class="pc">Per diem meals</span><span class="pc">Tournament entry fees</span></div><a class="pt-cta" href="https://givebutter.com/founding-donor-copy-7ccamz" target="_blank" rel="noopener">Donate to Travel &amp; Tournament Assistance &rarr;</a></div></div>
     <div class="pd-card pd-blue"><div class="pd-ic">&#127947;&#65039;&#8205;&#9792;&#65039;</div><div><div class="pd-tag pd-tag-b">Program 4 &mdash; Coaching &amp; Leadership Track</div><div class="pd-name">Coaching &amp; Leadership Development</div><p class="pd-desc">The pipeline of women coaches in flag football is thin &mdash; not because women don't want to coach, but because certification costs money. Your gift sponsors girls and young women to earn USA Football coaching credentials. No income test required: expanding the pipeline of women coaches is a standalone charitable purpose.</p><div class="pd-items"><span class="pc pcb">USA Football Certification</span><span class="pc pcb">Coaching clinics</span><span class="pc pcb">Leadership training</span><span class="pc pcb">Mentorship pairing</span></div><div class="pd-max pd-max-b">Open to all <span class="pd-max-lbl">&middot; Ages 16+ &middot; No income requirement</span></div><a class="pt-cta" href="https://givebutter.com/sponsor-a-coach" target="_blank" rel="noopener">Donate to Coaching &amp; Leadership Development &rarr;</a></div></div>
     <div class="pd-card pd-coming"><div class="pd-ic">&#127891;</div><div><div class="pd-tag pd-tag-d">Program 5 &mdash; Launching 2027</div><div class="pd-name">College Visibility Scholarships</div><p class="pd-desc">Annual merit-and-need scholarships for graduating seniors who played flag football and are pursuing higher education. You help build the pipeline from youth flag to college programs.</p><div class="pd-items"><span class="pc pcg">Merit-and-need based</span><span class="pc pcg">Graduating seniors only</span><span class="pc pcg">Flag football required</span></div><div class="pd-max pd-max-d">Contact us if you are interested in helping players to go college <a href="https://forms.gle/XiZqs12YAEeHHpfz9" target="_blank" rel="noopener" style="color:var(--green);font-weight:700;text-decoration:underline">&rarr;</a></div></div></div>
@@ -1240,7 +1252,7 @@ button{font-family:"Inter",sans-serif}
       <div class="sp-mot-card">
         <div class="smc-ic">&#128200;</div>
         <div class="smc-title">Brand Visibility</div>
-        <p class="smc-body">Your logo on player SWAG, tournament banners, social content, and athlete stories reaching NorCal families and sports communities across the region. We measure impressions and report them to you.</p>
+        <p class="smc-body">Your logo on player SWAG, tournament banners, social content, and athlete stories reaching NorCal families and sports communities across the region.</p>
       </div>
       <div class="sp-mot-card">
         <div class="smc-ic">&#127775;</div>
@@ -1284,8 +1296,6 @@ button{font-family:"Inter",sans-serif}
           <tr><td>Donor newsletter mention</td><td><span class="cky">&#10003;</span></td><td><span class="cky">&#10003;</span></td><td><span class="cky">&#10003;</span></td><td><span class="cky">&#10003;</span></td></tr>
           <tr><td>Annual impact report feature</td><td><span class="ckn">&mdash;</span></td><td><span class="cky">&#10003;</span></td><td><span class="cky">&#10003;</span></td><td><span class="cky">&#10003;</span></td></tr>
           <tr><td>Quarterly social mentions</td><td><span class="ckn">&mdash;</span></td><td><span class="cky">&#10003;</span></td><td><span class="cky">&#10003;</span></td><td><span class="cky">&#10003;</span></td></tr>
-          <tr><td>Jersey logo patch (all funded athletes)</td><td><span class="ckn">&mdash;</span></td><td><span class="ckn">&mdash;</span></td><td><span class="cky">&#10003;</span></td><td><span class="cky">&#10003;</span></td></tr>
-          <tr><td>Custom athlete story content</td><td><span class="ckn">&mdash;</span></td><td><span class="ckn">&mdash;</span></td><td><span class="cky">&#10003;</span></td><td><span class="cky">&#10003;</span></td></tr>
           <tr><td>Custom impact report (players funded)</td><td><span class="ckn">&mdash;</span></td><td><span class="ckn">&mdash;</span></td><td><span class="cky">&#10003;</span></td><td><span class="cky">&#10003;</span></td></tr>
           <tr><td>Named program or award rights</td><td><span class="ckn">&mdash;</span></td><td><span class="ckn">&mdash;</span></td><td><span class="ckn">&mdash;</span></td><td><span class="cky">&#10003;</span></td></tr>
           <tr><td>Full co-branding on all GFF materials</td><td><span class="ckn">&mdash;</span></td><td><span class="ckn">&mdash;</span></td><td><span class="ckn">&mdash;</span></td><td><span class="cky">&#10003;</span></td></tr>
@@ -1342,9 +1352,18 @@ button{font-family:"Inter",sans-serif}
       <p class="pt-mf-body">The Girls Flag Football Foundation is more than a scholarship program. We are building the connective tissue of girls' flag football in NorCal &mdash; linking clubs, schools, brands, equipment suppliers, and community organizations into a coordinated network that makes the sport more accessible for every girl in the region.</p>
     </div>
 
-    <span class="lbl">Partner Types</span>
-    <h2 class="h2">Six ways to <em>build with us.</em></h2>
-    <div class="pt-grid">
+    <div class="pt-head">
+      <div>
+        <span class="lbl">Partner Types</span>
+        <h2 class="h2">Five ways to <em>build with us.</em></h2>
+      </div>
+      <div class="pt-nav">
+        <button class="pt-btn" id="pt-prev" onclick="ptScroll(-1)" aria-label="Previous partner type">&larr;</button>
+        <span class="pt-count" id="pt-count">1 / 5</span>
+        <button class="pt-btn" id="pt-next" onclick="ptScroll(1)" aria-label="Next partner type">&rarr;</button>
+      </div>
+    </div>
+    <div class="pt-grid" id="pt-track">
 
       <div class="pt-card">
         <div class="pt-ic">&#127944;</div>
@@ -1358,20 +1377,6 @@ button{font-family:"Inter",sans-serif}
           <li class="pt-ben">Recognition as a Girls Flag Football Foundation partner club</li>
         </ul>
         <a class="pt-cta" href="https://forms.gle/efz4QVswniP4KyVm7" target="_blank" rel="noopener">Inquire about club partnership &rarr;</a>
-      </div>
-
-      <div class="pt-card">
-        <div class="pt-ic">&#127979;</div>
-        <div class="pt-name">School Partners</div>
-        <p class="pt-desc">Middle and high schools building flag football programs can partner with GFF to connect student-athletes to funding, gear, and coaching development resources.</p>
-        <ul class="pt-benefits">
-          <li class="pt-ben">Gear and equipment support for school teams</li>
-          <li class="pt-ben">Coaching certification pathways for staff</li>
-          <li class="pt-ben">Scholarship referrals for qualifying athletes</li>
-          <li class="pt-ben">Co-branded program recognition</li>
-          <li class="pt-ben">Access to tournament and travel assistance</li>
-        </ul>
-        <a class="pt-cta" href="https://forms.gle/efz4QVswniP4KyVm7" target="_blank" rel="noopener">Inquire about school partnership &rarr;</a>
       </div>
 
       <div class="pt-card">
@@ -1403,17 +1408,16 @@ button{font-family:"Inter",sans-serif}
       </div>
 
       <div class="pt-card">
-        <div class="pt-ic">&#127942;</div>
-        <div class="pt-name">Tournament Partners <span style="font-weight:600;font-size:12px;color:var(--g3)">(Coming Soon)</span></div>
-        <p class="pt-desc">Tournament organizers who partner with GFF provide priority access and travel support to GFF-funded athletes, expanding competitive opportunity across NorCal.</p>
+        <div class="pt-ic">&#128203;</div>
+        <div class="pt-name">Coaching Partners</div>
+        <p class="pt-desc">Coaching organizations, colleges, and experienced coaches who partner with GFF help build a pipeline of women coaches &mdash; so the girls on the field see themselves on the sideline, too.</p>
         <ul class="pt-benefits">
-          <li class="pt-ben">Co-promotion to GFF athlete and donor audience</li>
-          <li class="pt-ben">GFF banner and recognition at events</li>
-          <li class="pt-ben">Featured in GFF athlete communications</li>
-          <li class="pt-ben">Priority registration access for GFF athletes</li>
-          <li class="pt-ben">Joint storytelling post-event</li>
+          <li class="pt-ben">Certification support for women entering coaching</li>
+          <li class="pt-ben">Mentorship pairing with experienced coaches</li>
+          <li class="pt-ben">Assistant-coach pathways for former players</li>
+          <li class="pt-ben">Recognition as a GFF Coaching Partner</li>
         </ul>
-        <a class="pt-cta" href="https://forms.gle/efz4QVswniP4KyVm7" target="_blank" rel="noopener">Inquire about tournament partnership &rarr;</a>
+        <a class="pt-cta" href="https://forms.gle/efz4QVswniP4KyVm7" target="_blank" rel="noopener">Inquire about coaching partnership &rarr;</a>
       </div>
 
       <div class="pt-card">
@@ -1497,7 +1501,7 @@ button{font-family:"Inter",sans-serif}
       <div class="nxt-ic">&#128236;</div>
       <div>
         <div class="nxt-title">What happens after you apply</div>
-        <div class="nxt-body">Submit &rarr; reviewed within 14 business days &rarr; award notification &rarr; funds paid directly to your club or gear vendor. You bring the talent. We handle the rest.</div>
+        <div class="nxt-body">Submit &rarr; reviewed within 14 business days &rarr; award notification &rarr; funds reimbursed after paid receipt submission. You bring the talent. We handle the rest.</div>
         <div class="nxt-btns">
           <a href="https://forms.gle/vibBBLycTH6vmyi86" target="_blank" rel="noopener" class="btn btn-g btn-sm">Start Application &rarr;</a>
           <button class="btn btn-ow btn-sm" onclick="window.open('https://forms.gle/yWfFKS898B17PFy47','_blank')">Contact Us First</button>
@@ -1921,6 +1925,7 @@ function showPage(name, skipHistory){
   if(!skipHistory && location.hash!=="#"+name){
     history.pushState({page:name},"","#"+name);
   }
+  if(name==="partners" && typeof ptUpdate==="function"){var tr=document.getElementById("pt-track");if(tr) tr.scrollLeft=0;setTimeout(ptUpdate,0);}
 }
 
 function toggleMobileMenu(show){
@@ -2041,6 +2046,32 @@ function benScroll(dir){
   var t=document.getElementById('ben-track'); if(!t) return;
   var timer; t.addEventListener('scroll',function(){clearTimeout(timer);timer=setTimeout(benUpdate,60);},{passive:true});
   window.addEventListener('resize',benUpdate); benUpdate();
+})();
+function ptIdx(t){return Math.round(t.scrollLeft/t.clientWidth);}
+function ptFit(t,i){
+  var cards=t.querySelectorAll('.pt-card');
+  if(window.innerWidth<=700 && cards[i]){t.style.height=(cards[i].offsetHeight+2)+'px';}
+  else{t.style.height='';}
+}
+function ptUpdate(){
+  var t=document.getElementById('pt-track'); if(!t||!t.clientWidth) return;
+  var n=t.querySelectorAll('.pt-card').length, i=ptIdx(t);
+  var c=document.getElementById('pt-count'); if(c) c.textContent=(i+1)+' / '+n;
+  ptFit(t,i);
+  var p=document.getElementById('pt-prev'), x=document.getElementById('pt-next');
+  if(p) p.disabled=(i<=0); if(x) x.disabled=(i>=n-1);
+}
+function ptScroll(dir){
+  var t=document.getElementById('pt-track'); if(!t) return;
+  var n=t.querySelectorAll('.pt-card').length;
+  var i=Math.max(0,Math.min(n-1,ptIdx(t)+dir));
+  ptFit(t,i);
+  t.scrollTo({left:i*t.clientWidth,behavior:'smooth'});
+}
+(function(){
+  var t=document.getElementById('pt-track'); if(!t) return;
+  var timer; t.addEventListener('scroll',function(){clearTimeout(timer);timer=setTimeout(ptUpdate,60);},{passive:true});
+  window.addEventListener('resize',ptUpdate); ptUpdate();
 })();
 </script>
 </body>
